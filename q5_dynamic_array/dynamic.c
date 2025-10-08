@@ -26,9 +26,11 @@
 int main() {
     int n;
     // TODO: scanf("%d", &n);
-
+    printf("Enter an integer : ");
+    scanf("%d", &n);
+    
     // Placeholder n for testing
-    n = 0; // Replace with actual read
+    // n = 2; // Replace with actual read
 
     if (n <= 0) {
         printf("Invalid size. Use positive integer.\n");
@@ -37,18 +39,23 @@ int main() {
 
     // TODO: int *arr = malloc(n * sizeof(int));
     // if (arr == NULL) { printf("Allocation failed!\n"); return 1; }
-
-    int *arr = NULL; // Placeholder
+    int *arr = malloc(n * sizeof(int));
+    if (arr == NULL) { printf("Allocation failed!\n"); return 1; }
+    
+    // int *arr = NULL; // Placeholder
 
     // TODO: Fill array: for(int i = 0; i < n; i++) arr[i] = i + 1;
+    for(int i = 0; i < n; i++) arr[i] = i + 1;
 
     // TODO: Sum: int sum = 0; for(int i = 0; i < n; i++) sum += arr[i];
+    int sum = 0; for(int i = 0; i < n; i++) sum += arr[i];
 
-    int sum = 0; // Placeholder
+    // int sum = 0; // Placeholder
 
     printf("Sum: %d\n", sum);
 
     // TODO: free(arr);
+    free(arr);
 
     return 0;
 }
